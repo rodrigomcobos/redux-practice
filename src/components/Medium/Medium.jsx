@@ -10,7 +10,7 @@ export default function Medium() {
   const dispatch = useDispatch(); //Saving dispatch as a variable
 
   useEffect(() => {
-    dispatch(requestArticles());
+    dispatch(requestArticles);
   }, []);
 
   const articleCards = articles.map((article) => <Card key={article.id} article={article} />);

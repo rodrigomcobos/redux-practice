@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
-  loading: true,
+  loading: false,
   articles: [],
 };
 
