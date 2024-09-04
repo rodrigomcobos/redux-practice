@@ -15,6 +15,7 @@ const PENDING = 'PENDING';
 export const requestArticles = async (dispatch) => {
   dispatch({ type: PENDING });
   let articles = await axios.get('/api/hacker-news').then((res) => res.data);
+  console.log('ARTICLES:', articles);
   dispatch({ type: REQUEST_ARTICLES, payload: articles });
 };
 
@@ -29,7 +30,7 @@ export default function hackerNewsReducer(state = initialState, action) {
     case REQUEST_ARTICLES: //Request articles action
       return {
         loading: false,
-        article: action.payload,
+        articles: action.payload,
       };
 
     default:
